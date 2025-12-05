@@ -260,20 +260,25 @@ Para integrar o Mapa Interativo da Almav em um site WordPress, siga estas etapas
    Você pode personalizar ainda mais o mapa adicionando opções como:
 
    ```javascript
-   map = new almav.maps.Map(document.getElementById('map'), {
-     fitBounds: true, // Ajustar o zoom para os limites dos elementos
-      bearing: 0, // Ângulo de rotação do mapa
-      maxPitch: 55, // Inclinação máxima do mapa
-      showZoom: true, // Mostra botões de zoom in e zoom out
-      maxZoom: 19, // Zoom máximo
-      minZoom: 5, // Zoom mínimo
-      showCompass: false, // Mostra o botão de bússola
-      showCompassAlt: { show: true, position: 'top-right', order: -1, title: 'Mostrar direção do Norte' }, // Mostra texto alternativo para o botão de bússola
-      geolocate: { show: true, order: 99, message: 'permitir GPS', timeout: 15000 }, // Mostra texto do botão de geolocalização
-      almavLogo: true, // Mostra o logo da Almav
-      almavAttribution: true, // Mostra a atribuição do mapa
-      layersReady: () => waitForMap(almavMap1), // Esperar o mapa ser carregado
-   });
+   almavMap1 = new almav.maps.Map(document.getElementById('almavMap1'), {
+                fitBounds: true, // Ajustar o zoom para os limites dos elementos
+                bearing: -54, // Ângulo de rotação do mapa
+                maxPitch: 55, // Inclinação máxima do mapa
+                showZoom: true, // mostra botões de zoom in e zoom out
+                maxZoom: 21,
+                showCompass: false,
+                showCompassAlt: { show: true, position: 'top-right', order: -1, title: 'Mostrar direção do Norte', display_none_max_height: '335px' },
+                geolocate: { show: true, order: 99, message: 'permitir GPS', timeout: 15000 },
+                almavLogo: true,
+                almavAttribution: true,
+                layersReady: () => waitForMap(almavMap1), // Esperar o mapa ser carregado e chama a função para criar a extrusão
+                fullscreen: {
+                    show: true,
+                    display_none_max_height: '390px', // Ocultar em telas com altura <= 390px
+                    display_none_max_width: '550px' // Ocultar em telas com largura <= 550px
+                },
+                recenter: { show: true, display_none_max_height: '285px' }
+            });
    ```
 
 ### Notas de Compatibilidade
