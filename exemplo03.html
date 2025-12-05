@@ -170,6 +170,12 @@
         function initMap() {
             // Criar o objeto do mapa
             almavMap1 = new almav.maps.Map(document.getElementById('almavMap1'), {
+                cooperativeGestures: true, // Habilitar gestos cooperativos
+                locale: { // Configurar o texto de ajuda para os gestos cooperativos
+                    'CooperativeGesturesHandler.WindowsHelpText': 'Use Ctrl + rolagem para fazer zoom no mapa.',
+                    'CooperativeGesturesHandler.MacHelpText': 'Use ⌘ + rolagem para fazer zoom no mapa.',
+                    'CooperativeGesturesHandler.MobileHelpText': 'Use 2 dedos para mover o mapa.',
+                },
                 fitBounds: true, // Ajustar o zoom para os limites dos elementos
                 bearing: -54, // Ângulo de rotação do mapa
                 maxPitch: 55, // Inclinação máxima do mapa
@@ -186,7 +192,7 @@
                     display_none_max_height: '390px', // Ocultar em telas com altura <= 390px
                     display_none_max_width: '550px' // Ocultar em telas com largura <= 550px
                 },
-                recenter: { show: true, display_none_max_height: '285px' }
+                recenter: { show: true, display_none_max_height: '285px' },
             });
         }
 
