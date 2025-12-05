@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://zetta.almav.com.br/residencialreservadorio/index.html">
+    <meta property="og:title" content="Residencial Reserva do Rio">
+    <meta property="og:site_name" content="Residencial Reserva do Rio">
+    <meta property="og:description" content="Mapa Interativo do Loteamento">
+    <meta property="og:image" content="screenshot.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="697">
+    <meta property="og:type" content="website">
+    <meta property="og:updated_time" content="2025-05-20T12:00:00+00:00">
+
+    <meta name="description" content="Mapa Interativo do Loteamento. Explore o Residencial Reserva do Rio com detalhes incríveis.">
+    <meta name="keywords" content="Mapa Interativo, Loteamento, Residencial Reserva do Rio, Almav">
+
+    <link rel="preconnect" href="https://maps.app.almav.com">
+
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Terras" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="canonical" href="https://zetta.almav.com.br/residencialreservadorio/" />
+    <link rel='shortlink' href='https://zetta.almav.com.br/residencialreservadorio/' />
+
+    <meta name="theme-color" content="#406b63">
+
+    <title>Exemplo de Uso da API Almav Mapas Interativos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: fit-content;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #666666;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #almavMap1 {
+            width: 100%;
+            height: 550px;
+            background-color: #e0e0e0;
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content p {
+            color: #333333;
+            line-height: 1.6;
+        }
+    </style>
+    <!-- Importante -->
+    <!-- key: é a chave de API -->
+    <!-- callback: é o nome da função que será executada após o carregamento do mapa -->
+    <script
+        src="https://maps.app.almav.com/apiv2/js/almav-initmap.min.js?key=8fab008c-f4a6-4d23-a0e5-4c9cd5af05bc&callback=initMap&debug=true"
+        defer></script>
+</head>
+
+<body>
+    <div class="container content">
+        <h2>Seção 1: Informações Adicionais</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula cursus dolor, vel dictum ligula
+            interdum nec.
+            Phasellus quis justo sit amet eros auctor viverra. Duis euismod ligula a erat fermentum, ut ultricies lacus
+            scelerisque.
+            Vestibulum in ultricies magna, et feugiat libero. Aliquam erat volutpat. Suspendisse potenti. Mauris ut
+            metus sem.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam
+            ullamcorper dui
+            a tortor consequat, eget cursus urna interdum. Nullam vehicula ligula nec libero pretium, nec consectetur
+            urna ultrices.</p>
+    </div>
+
+    <div class="container content">
+        <h2>...</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula cursus dolor, vel dictum ligula
+            interdum nec.
+            Phasellus quis justo sit amet eros auctor viverra. Duis euismod ligula a erat fermentum, ut ultricies lacus
+            scelerisque.
+            Vestibulum in ultricies magna, et feugiat libero. Aliquam erat volutpat. Suspendisse potenti. Mauris ut
+            metus sem.</p>
+    </div>
+
+    <div class="container">
+        <h1>Exemplo de Uso da API Almav Mapas Interativos</h1>
+        <h2>Mapa Interativo</h2>
+        <!-- Esse é o elemento que receberá o mapa -->
+        <div id="almavMap1"></div>
+    </div>
+
+    <div class="container content">
+        <h2>Seção 2: Mais Informações</h2>
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer a neque arcu.
+            Proin nec lorem ac velit scelerisque hendrerit. Nullam scelerisque libero et libero tincidunt, ac
+            sollicitudin libero
+            sodales. In hac habitasse platea dictumst. Quisque quis sapien nec augue feugiat viverra. Sed ut justo nec
+            urna tempor
+            egestas. Curabitur interdum eu ligula ac malesuada. Nulla facilisi. Nullam tempor nisl at orci malesuada,
+            eget dapibus
+            mauris gravida. Sed ac felis vel lorem varius vestibulum. Aenean id facilisis elit. Phasellus tincidunt
+            nulla non orci
+            convallis, in dictum arcu consequat.</p>
+    </div> 
+
+    <div class="container content">
+        <h2>Seção 3: Mais Informações</h2>
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer a neque arcu.
+            Proin nec lorem ac velit scelerisque hendrerit. Nullam scelerisque libero et libero tincidunt, ac
+            sollicitudin libero
+            sodales. In hac habitasse platea dictumst. Quisque quis sapien nec augue feugiat viverra. Sed ut justo nec
+            urna tempor
+            egestas. Curabitur interdum eu ligula ac malesuada. Nulla facilisi. Nullam tempor nisl at orci malesuada,
+            eget dapibus
+            mauris gravida. Sed ac felis vel lorem varius vestibulum. Aenean id facilisis elit. Phasellus tincidunt
+            nulla non orci
+            convallis, in dictum arcu consequat.</p>
+    </div>
+    <script>
+        /*
+            Inicializar o mapa
+            -------------------
+            * A função `initMap` será executada após o carregamento do mapa.
+            * O parâmetro da url `callback` é o nome da função que será 
+            executada após o carregamento do mapa. 
+            Por exemplo: `callback=initMap`.
+        */
+        // IMPORTANTE:
+        let almavMap1;
+        function initMap() {
+            // Criar o objeto do mapa
+            almavMap1 = new almav.maps.Map(document.getElementById('almavMap1'), {
+                fitBounds: true, // Ajustar o zoom para os limites dos elementos
+                bearing: -54, // Ângulo de rotação do mapa
+                maxPitch: 55, // Inclinação máxima do mapa
+                showZoom: true, // mostra botões de zoom in e zoom out
+                maxZoom: 21,
+                showCompass: false,
+                showCompassAlt: { show: true, position: 'top-right', order: -1, title: 'Mostrar direção do Norte', display_none_max_height: '335px' },
+                geolocate: { show: true, order: 99, message: 'permitir GPS', timeout: 15000 },
+                almavLogo: true,
+                almavAttribution: true,
+                layersReady: () => waitForMap(almavMap1), // Esperar o mapa ser carregado e chama a função para criar a extrusão
+                fullscreen: {
+                    show: true,
+                    display_none_max_height: '390px', // Ocultar em telas com altura <= 390px
+                    display_none_max_width: '550px' // Ocultar em telas com largura <= 550px
+                },
+                recenter: { show: true, display_none_max_height: '285px' }
+            });
+        }
+
+          // Função para aguardar o carregamento do mapa
+        window.waitForMap = (mapInstance) => {
+            // Registra a instância do mapa para uso global
+            almavAppMap.registerMapInstance('almavMap1', mapInstance);
+            
+            // Inicializa os componentes do mapa
+            almavAppMap.addPerspectiveButton(mapInstance);
+            almavAppMap.addPoisButton(mapInstance);
+            almavAppMap.addWazeMapsButton(mapInstance);
+            almavAppMap.addLayerLabelsMap(mapInstance);
+        } 
+    </script>
+
+    <!-- Opcional: Impedir que smartphones desliguem a tela durante o uso -->
+    <!-- Autor: https://github.com/richtr/NoSleep.js.git -->
+    <script src="https://maps.app.almav.com/apiv2/assets/vendor/richtr/NoSleep.min.js"></script>
+    <script>var noSleep = new NoSleep(); noSleep.enable();</script>
+</body>
+
+</html>

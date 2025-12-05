@@ -1,0 +1,50 @@
+{
+    "name": "Residencial Reserva do Rio",
+    "short_name": "Reserva do Rio",
+    "start_url": "/residencialreservadorio/index.html",
+    "scope": "/residencialreservadorio/",
+    "description": "Mapa Interativo do Loteamento. Explore o Empreendimento com detalhes incríveis.",
+    "icons": [
+      {
+        "src": "web-app-manifest-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "web-app-manifest-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ],
+    "theme_color": "#88a3b1",
+    "background_color": "#88a3b1",
+    "display": "standalone",
+    "display_override": [
+      "standalone",
+      "window-controls-overlay"
+    ],
+    "orientation": "any",
+    "id": "com.almav.app.maps.zetta.reservadorio",
+    "dir": "ltr",
+    "lang": "pt",
+    "categories": [
+      "business",
+      "navigation",
+      "utilities"
+    ],
+    "prefer_related_applications": false,
+    "screenshots": [
+      {
+        "src": "screenshot01.jpeg",
+        "sizes": "1280x1005",
+        "type": "image/jpeg"
+      },
+      {
+        "src": "screenshot02.jpeg",
+        "sizes": "1280x997",
+        "type": "image/jpeg"
+      }
+    ]
+  }

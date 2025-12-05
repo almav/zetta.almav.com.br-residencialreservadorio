@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="google" content="notranslate">
+
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://zetta.almav.com.br/residencialreservadorio/index.html">
+    <meta property="og:title" content="Residencial Reserva do Rio">
+    <meta property="og:site_name" content="Residencial Reserva do Rio">
+    <meta property="og:description" content="Mapa Interativo do Loteamento">
+    <meta property="og:image" content="https://zetta.almav.com.br/residencialreservadorio/screenshot.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1020">
+    <meta property="og:image:height" content="697">
+    <meta property="og:type" content="website">
+    <meta property="og:updated_time" content="2025-12-05T10:00:00+00:00">
+
+    <!-- X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="zetta.almav.com.br">
+    <meta property="twitter:url" content="https://zetta.almav.com.br/residencialreservadorio">
+    <meta name="twitter:title" content="Residencial Reserva do Rio">
+    <meta name="twitter:description" content="Mapa Interativo do Loteamento">
+    <meta name="twitter:image" content="https://zetta.almav.com.br/residencialreservadorio/screenshot01.jpeg">
+
+
+    <meta name="description" content="Mapa Interativo do Loteamento. Explore o Residencial Reserva do Rio com detalhes incríveis.">
+    <meta name="keywords" content="Mapa Interativo, Loteamento, Residencial Reserva do Rio, Almav, Cosmópolis">
+
+    <link rel="preconnect" href="https://maps.app.almav.com">
+    <link rel="preconnect" href="https://storage.almav.com">
+
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Residencial Reserva do Rio" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="canonical" href="https://zetta.almav.com.br/residencialreservadorio/" />
+    <link rel='shortlink' href='https://zetta.almav.com.br/residencialreservadorio/' />
+
+    <meta name="theme-color" content="#88a3b1">
+
+    <title>Residencial Reserva do Rio</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #almavMap1 {
+            position: fixed;
+            /* safe-area com viewport-fit=cover */
+            top: env(safe-area-inset-top);
+            left: env(safe-area-inset-left);
+            right: env(safe-area-inset-right);
+            bottom: env(safe-area-inset-bottom);
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <!-- Importante -->
+    <!-- key: é a chave de API -->
+    <!-- callback: é o nome da função que será executada após o carregamento do mapa -->
+        <script src="https://maps.app.almav.com/apiv2/js/almav-initmap.min.js?key=8fab008c-f4a6-4d23-a0e5-4c9cd5af05bc&callback=initMap&v=1.0.1" defer></script>
+</head>
+
+<body>
+    <!-- Esse é o elemento que receberá o mapa -->
+    <div id="almavMap1"></div>
+    <script>
+        /*
+            Inicializar o mapa
+            -------------------
+            * A função `initMap` será executada após o carregamento do mapa.
+            * O parâmetro da url `callback` é o nome da função que será 
+            executada após o carregamento do mapa. 
+            Por exemplo: `callback=initMap`.
+        */
+        // IMPORTANTE:
+        let almavMap1;
+        function initMap() {
+            // Criar o objeto do mapa
+            almavMap1 = new almav.maps.Map(document.getElementById('almavMap1'), {
+                fitBounds: true, // Ajustar o zoom para os limites dos elementos
+                bearing: -54, // Ângulo de rotação do mapa
+                maxPitch: 55, // Inclinação máxima do mapa
+                showZoom: true, // mostra botões de zoom in e zoom out
+                maxZoom: 21,
+                showCompass: false,
+                showCompassAlt: { show: true, position: 'top-right', order: -1, title: 'Mostrar direção do Norte', display_none_max_height: '335px' },
+                geolocate: { show: true, order: 99, message: 'permitir GPS', timeout: 15000 },
+                almavLogo: true,
+                almavAttribution: true,
+                layersReady: () => waitForMap(almavMap1), // Esperar o mapa ser carregado e chama a função para criar a extrusão
+                fullscreen: {
+                    show: true,
+                    display_none_max_height: '390px', // Ocultar em telas com altura <= 390px
+                    display_none_max_width: '550px' // Ocultar em telas com largura <= 550px
+                },
+                recenter: { show: true, display_none_max_height: '285px' }
+            });
+        }
+
+        // Função para aguardar o carregamento do mapa
+        window.waitForMap = (mapInstance) => {
+            // Registra a instância do mapa para uso global
+            almavAppMap.registerMapInstance('almavMap1', mapInstance);
+            
+            // Inicializa os componentes do mapa
+            almavAppMap.addPerspectiveButton(mapInstance);
+            almavAppMap.addPoisButton(mapInstance);
+            almavAppMap.addWazeMapsButton(mapInstance);
+            almavAppMap.addLayerLabelsMap(mapInstance);
+        } 
+    </script>
+
+
+    <!-- Opcional: Impedir que smartphones desliguem a tela durante o uso -->
+    <!-- Autor: https://github.com/richtr/NoSleep.js.git -->
+    <script src="https://maps.app.almav.com/apiv2/assets/vendor/richtr/NoSleep.min.js"></script>
+    <script>var noSleep = new NoSleep(); noSleep.enable();</script>
+    <script>
+        // Registrar o SW para manter o Mapa Interativo operante mesmo Offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('https://zetta.almav.com.br/residencialreservadorio/sw.js?v=1.0.1')
+                .then(function (registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(function (error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+   </script>
+</body>
+</html>
